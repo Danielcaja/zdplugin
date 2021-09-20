@@ -81,48 +81,48 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
         ),
         body: Center(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                Text('Running on: $_platformVersion\n'),
-                Text('Chat status: '),
-                RaisedButton(
-                  onPressed: () async {
-                    await _flutterPlugin.startChatV1();
-                  },
-                  child: Text("Start Chat V1"),
-                ),
-                RaisedButton(
-                  onPressed: () async {
-                    await _flutterPlugin.startChatV2(
-                        phone: "173****5179",
-                        name: "HGY New",
-                        email: "HGY New@gmail.com",
-                        botLabel: "BR Play Label",
-                        departmentName: " Department Name",
-                        endChatSwitch: false,
-                        toolbarTitle: "Online Service");
-                  },
-                  child: Text("Start Chat V2"),
-                ),
-                RaisedButton(
-                  onPressed: () async {
-                    await _flutterPlugin.helpCenter().then((value) {
-                      print('object<<<<<<<<<<<<< ' + value.toString());
-                    });
-                  },
-                  child: Text("Help Center"),
-                ),
-                RaisedButton(
-                  onPressed: () async {
-                    await _flutterPlugin.requestListViewAction().then((value) {
-                      print('object<<<<<<<<<<<<< ' + value.toString());
-                    });
-                  },
-                  child: Text("Request List"),
-                ),
-              ],
-            )),
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            Text('Running on: $_platformVersion\n'),
+            Text('Chat status: '),
+            ElevatedButton(
+              onPressed: () async {
+                await _flutterPlugin.startChatV1();
+              },
+              child: Text("Start Chat V1"),
+            ),
+            ElevatedButton(
+              onPressed: () async {
+                await _flutterPlugin.startChatV2(
+                    phone: "173****5179",
+                    name: "HGY New",
+                    email: "HGY New@gmail.com",
+                    botLabel: "BR Play Label",
+                    departmentName: " Department Name",
+                    endChatSwitch: false,
+                    toolbarTitle: "Online Service");
+              },
+              child: Text("Start Chat V2"),
+            ),
+            ElevatedButton(
+              onPressed: () async {
+                await _flutterPlugin.helpCenter().then((value) {
+                  print('object<<<<<<<<<<<<< ' + value.toString());
+                });
+              },
+              child: Text("Help Center"),
+            ),
+            ElevatedButton(
+              onPressed: () async {
+                await _flutterPlugin.requestListViewAction().then((value) {
+                  print('object<<<<<<<<<<<<< ' + value.toString());
+                });
+              },
+              child: Text("Request List"),
+            ),
+          ],
+        )),
         floatingActionButton: FloatingActionButton(
           onPressed: () async {
             await _flutterPlugin.requestViewAction();
